@@ -58,7 +58,6 @@ network_event.OnServerEvent:Connect(function(player, ...)
 
 		for _, target_player in PLAYERS:GetChildren() do
 			if target_player ~= player then
-				print(player, target_player)
 				network_event:FireClient(target_player, "hit", hit_info)
 			end
 		end
@@ -100,8 +99,6 @@ PLAYERS.PlayerAdded:Connect(function(player)
 
 		local player_script = script.UEClient:Clone()
 		player_script.Parent = player
-
-		print(player_script, player_script.Parent)
 
 		delay(0.1, function()
 			character_script.Enabled = true
